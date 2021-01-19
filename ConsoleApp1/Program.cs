@@ -20,13 +20,35 @@ namespace Lab_Two
 
                 var ResultA = InputL * InputW;
                 var ResultP = 2 * InputL + 2 * InputW;
-                Console.WriteLine("The area of your room is " + ResultA + " and the perimeter of your room is " + ResultP + "\nWould you like to continue (y/n)?");
+                Console.WriteLine("The area of your room is " + ResultA + " and the perimeter of your room is " + ResultP + "\nWould you also like to know the volume of your room (y/n)?");
                 answer = Console.ReadLine();
+
+                if (answer == "y")
+
+                {
+                    Console.Write("Please enter the Height of your room: ");
+                    var HeightInput=Console.ReadLine();
+                    var InputH = double.Parse(HeightInput);
+
+                    var ResultV = InputH * InputL * InputW;
+                    
+                    Console.WriteLine("The volume of your room is "+ ResultV);
+                    
+                     while (answer != "y" && answer!="n")
+                {
+                    Console.WriteLine("Invalid Input. Please enter 'y' or 'n.'\nWould you to know the volume of your room (y/n)?");
+                    answer = Console.ReadLine();
+
+                }
+               
+                while (answer != "y" && answer!="n")
+                {
+                    Console.WriteLine("Invalid Input. Please enter 'y' or 'n.'\nWould you (y/n)?");
+                    answer = Console.ReadLine(); 
+                }
             } while (answer=="y");
             Console.WriteLine("Thank you for using The Room Calculator! Goodbye.");
-                
-
-
+             
         
         }
     }
