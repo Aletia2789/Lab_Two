@@ -22,30 +22,32 @@ namespace Lab_Two
                 var ResultP = 2 * InputL + 2 * InputW;
                 Console.WriteLine("The area of your room is " + ResultA + " and the perimeter of your room is " + ResultP + "\nWould you also like to know the volume of your room (y/n)?");
                 answer = Console.ReadLine();
+               
 
                 if (answer == "y")
-
                 {
-                    Console.Write("Please enter the Height of your room: ");
-                    var HeightInput=Console.ReadLine();
+                    Console.Write("Please enter the height of your room: ");
+                    var HeightInput = Console.ReadLine();
                     var InputH = double.Parse(HeightInput);
 
-                    var ResultV = InputH * InputL * InputW;
-                    
-                    Console.WriteLine("The volume of your room is "+ ResultV);
-                    
-                     while (answer != "y" && answer!="n")
-                {
-                    Console.WriteLine("Invalid Input. Please enter 'y' or 'n.'\nWould you to know the volume of your room (y/n)?");
+                    var ResultV = InputL * InputW * InputH;
+
+                    Console.WriteLine("The volume of your room is " + ResultV + "\nWould you like to continue using the room calculator(y/n)?");
                     answer = Console.ReadLine();
 
+                    while (answer != "y" && answer != "n")
+                    {
+                        Console.WriteLine("Invalid Input. Please enter 'y' or 'n.'\nWould you like to continue (y/n)?");
+                        answer = Console.ReadLine();
+                    }
                 }
-               
-                while (answer != "y" && answer!="n")
+
+                while (answer != "y" && answer != "n")
                 {
-                    Console.WriteLine("Invalid Input. Please enter 'y' or 'n.'\nWould you (y/n)?");
-                    answer = Console.ReadLine(); 
+                    Console.WriteLine("Invalid Input. Please enter 'y' or 'n.'\nWould you like to continue (y/n)?");
+                    answer = Console.ReadLine();
                 }
+
             } while (answer=="y");
             Console.WriteLine("Thank you for using The Room Calculator! Goodbye.");
              
